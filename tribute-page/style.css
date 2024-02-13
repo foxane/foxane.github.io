@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Protest+Revolution&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+:root {
+    /* || Color */
+    --primary-color: #0A0F0D;
+    --secondary-color: #FF934F;
+    --accent-color: #CABD77;
+    --light-color: #f7f7f7;
+    --accent-color-gradient: hsla(51, 44%, 63%, 0.39);
+
+    /* || Font */
+    --f-fam-title: Arvo, 'Open Sans', sans-serif;
+    --f-fam-subtitle: 'Protest Revolution', 'Open Sans', sans-serif;
+    --f-fam-content: 'Open Sans', sans-serif;
+    --f-size-small: 1.5rem;
+    --f-size-normal: 2rem;
+    --f-size-big: 2.5rem;
+    --f-size-biggest: 4rem;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%; /* || 1rem = 10px */
+}
+body {
+    width: 100%;
+    font-size: clamp(1rem, 2vh, 3rem);
+    font-family: 'open Sans', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.05ch;
+
+    background-color: var(--primary-color);
+    color: var(--light-color);
+}
+.header {
+    min-height: 100vh;
+    width: 100%;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-end;
+    align-items: center;
+
+    padding: 0 2rem 3rem 0;
+
+    background-image: linear-gradient(to top, rgba(10, 9, 9, 0.9) , var(--accent-color-gradient)),url(banner.png);
+    background-position: 85% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.header * {
+    grid-area: 1;
+}
+.header__title {
+    margin-bottom: 1rem;
+    text-align: center;
+
+
+    font-family: 'Protest Revolution', sans-serif;
+    font-size: clamp(2rem, 10vh, 6rem);
+    
+    color: transparent;
+
+    background:linear-gradient(to right bottom, var(--accent-color) 60%, var(--primary-color));
+
+    -webkit-background-clip: text; /* || clip on live preview doesn't work without this */
+    background-clip: text;
+}
+    
+.header__description {
+    margin-bottom : 4rem;
+
+    color: transparent;
+    font-family: 'Protest Revolution', 'Open Sans', sans-serif;
+    text-align: right;
+
+    background:linear-gradient(to right, var(--accent-color)70%, var(--accent-color-gradient));
+
+    -webkit-background-clip: text; /* || clip on live preview doesn't work without this */
+    background-clip: text;
+}
+
+.subject {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+
+    text-align: center;
+}
+
+/* || Debug */
+.subject * {
+    border: 1px solid 
+}
+
+.subject__image {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 50%;
+    margin: 2rem auto 0 auto;
+}
+.subject__info {
+    padding-top: 5rem;
+}
+.subject__name {
+    font-family: 'Arvo', 'Open Sans';
+    font-size: clamp(3rem, 2vh, 5rem);
+    color: var(--accent-color);
+
+    padding-bottom: 1rem;
+}

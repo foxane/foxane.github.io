@@ -1,0 +1,348 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+:root {
+    --color: white;
+    --color-0: #000000;
+    --color-1: #EAE0CC;
+    --color-2: #C9ADA1;
+    --color-3: #A0A083;
+    --color-4: #798478;
+    --color-5: #4D6A6D;
+    --color-6: red;
+    --color-7: orangered;
+}
+
+/*||||||||| START OF UTIL ||||||||||*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.5s;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+}
+
+/*||||||||| END OF UTIL ||||||||||*/
+
+/*----- PAGE ----- */
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+
+    background: center / cover no-repeat fixed var(--color-1) linear-gradient(110deg, var(--color-1), var(--color-3));
+    background-size: 100%;
+    font-family: Rubik, Arial, Helvetica, sans-serif;
+    font-size: 1.3rem;
+    line-height: 1.5em;
+
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* ||||||| HEADER |||||||*/
+header {
+    width: 100%;
+
+    min-height: 12vh;
+
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    position: fixed;
+
+    border-radius: 0 0 0.3rem 0.3rem;
+    border: 1px solid var(--color-0);
+    text-align: center;
+    background-color: var(--color-2);
+    color: var(--color-0);
+
+    z-index: 1;
+}
+
+#description {
+    margin-top: 0.5rem;
+
+    font-family: Rubik, Times, serif;
+    font-size: 1.2rem;
+}
+
+/* ||||||| CONTAINER ||||||*/
+form {
+    height: auto;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 100vh;
+    width: 80%;
+    max-width: 600px;
+    margin: 30vh 0 25vh 0;
+}
+
+/* ||||||| BOX ||||||| */
+section {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+
+    background: var(--color-2);
+    color: var(--color-0);
+    border: 1px solid var(--color-0);
+    border-radius: 0.3rem;
+    opacity: 0.9;
+
+    scroll-snap-align: center;
+}
+
+section:nth-of-type(1) {
+    background-color: var(--color-3);
+}
+
+section:nth-of-type(2) {
+    background-color: var(--color-4);
+}
+
+section:nth-of-type(3) {
+    background-color: var(--color-5);
+}
+
+section:nth-of-type(3) h3 {
+    color: var(--color);
+}
+
+/* |||||| BOX ITEMS |||||| */
+h3 {
+    text-align: center;
+    color: var(--color-0);
+}
+
+section>label {
+    color: var(--color-0);
+}
+
+section:nth-of-type(1) label {
+    /* adding spaces for label on first box */
+    margin: 0.5rem 0 0.1rem 0;
+}
+
+input,
+select {
+    height: 1.8rem;
+
+    font-size: 1.1rem;
+    text-indent: 0.4rem;
+
+    background-color: var(--color-1);
+    color: var(--color-0);
+    border: 1px solid var(--color-2);
+}
+
+/* ||||||| BOX ITEMS 2 ||||||| */
+fieldset {
+    display: flex;
+    flex-flow: column nowrap;
+    margin-top: 2rem;
+
+    border: none;
+}
+
+.fieldset-description {
+    color: var(--color-0);
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+fieldset input {
+    height: auto;
+}
+
+fieldset label {
+    margin-left: 1rem;
+
+    font-size: 1.1rem;
+    color: var(--color-0)
+}
+
+span {
+    border: 2px solid transparent;
+}
+
+/*||||||| BOX ITEMS 3 |||||||*/
+textarea {
+    width: 90%;
+    height: 5rem;
+    margin: 0 auto 0 auto;
+    padding: 0.5rem;
+
+    border: 1px solid var(--color-1);
+    border-radius: 0.2rem;
+
+    text-indent: 1rem;
+    font-size: inherit;
+    font-family: Arial, Helvetica, sans-serif;
+
+    background-color: var(--color-2);
+    color: var(--color-0);
+
+    resize: none;
+}
+
+/*||||||| BUTTON ||||||*/
+.buttons {
+    display: flex;
+    flex-flow: row-reverse;
+    justify-content: space-between;
+    margin: 1rem 0 0;
+}
+
+.button {
+    height: 2.5rem;
+    width: auto;
+    padding: 0.3rem;
+
+    border: 1px solid var(--color);
+    border-radius: 0.3rem;
+
+    font-size: inherit;
+    background-color: var(--color-0);
+    color: var(--color-1);
+    text-decoration: none;
+}
+
+.buttons-last {
+    width: 90%;
+    margin: 2rem auto 0;
+}
+
+
+/* ||||||| FOOTER ||||||| */
+footer {
+    width: 1000%;
+    height: auto;
+    padding: 1rem 0 2rem 0;
+
+    border-radius: 0.3rem 0.3rem 0 0;
+    border: 1px solid black;
+
+    background-color: var(--color-2);
+    text-align: center;
+    scroll-snap-align: center;
+}
+
+
+/* |||| BACKGROUND |||| */
+body::before {
+    content: '';
+    position: absolute;
+    transform: rotate(10deg);
+    top: 0%;
+
+    width: 100vw;
+    height: 200%;
+
+    background: var(--color-1) linear-gradient(var(--color-1), var(--color-6));
+    border-radius: 1%;
+    opacity: 0.3;
+
+    z-index: -1;
+    overflow-y: hidden;
+}
+
+body::after {
+    content: '';
+    position: absolute;
+    transform: rotate(-10deg);
+    top: 180%;
+
+    width: 100vw;
+    height: 200%;
+
+    background: var(--color-1) linear-gradient(var(--color-1), var(--color-7));
+    border-radius: 1%;
+    opacity: 0.3;
+
+    z-index: -2;
+    overflow-y: hidden;
+}
+
+
+
+/* |||| ANIMATIONS |||| */
+header:hover,
+footer:hover {
+    box-shadow: -3px 3px 10px 1px;
+    filter: brightness(110%);
+}
+
+section:hover,
+section:focus,
+section:active {
+    box-shadow: -3px 3px 10px 1px;
+    filter: brightness(110%);
+    opacity: 1;
+}
+
+label:hover,
+label:active {
+    color: var(--color-1);
+}
+
+
+input:hover,
+input:focus,
+select:hover,
+select:focus {
+    background-color: var(--color-2);
+}
+
+select:active,
+input:active {
+    outline: red;
+}
+
+textarea:hover,
+textarea:focus {
+    border: 1px solid var(--color-0);
+    background-color: var(--color-1);
+    height: 8rem;
+}
+
+.button:hover,
+.button:focus {
+    background-color: var(--color-1);
+    color: var(--color-0);
+    border: 1px solid var(--color-0);
+    cursor: pointer;
+}
+
+
+/* ||||||| MEDIA QUERIES ||||||| */
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    html {
+        scroll-snap-type: none;
+    }
+
+    header {
+        height: 15vh;
+        position: absolute;
+        top: 0%;
+    }
+
+    form {
+        margin-top: 20vh;
+    }
+
+    footer {
+        position: relative;
+        margin-top: -10vh;
+        bottom: 0;
+    }
+}
